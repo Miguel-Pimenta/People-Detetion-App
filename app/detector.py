@@ -1,8 +1,9 @@
 from ultralytics import YOLO
+from PIL.Image import Image
 
 model = YOLO("yolov8n.pt")
 
-def detect_people(image):
+def detect_people(image: Image) -> list:
     results = model(image)
     boxes = []
 
